@@ -187,6 +187,13 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
  .b{flex-wrap:wrap;gap:12px}
  .tk{height:auto}.tk .art{height:110vw}.tk .stub{min-height:240px}
 }
+
+/* ---- Fatal Frenzy art from the project deck ---- */
+.ffsvg svg{width:100%;height:100%;display:block}
+.tk .art .ffsvg,.fr .ffsvg{width:100%;height:100%}
+.hero>.ffsvg{position:absolute;top:0;left:16%;width:88%;height:100%;transition:opacity .9s ease;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%),linear-gradient(0deg,transparent,#000 26%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 30%);}
+@media(max-width:640px){.hero>.ffsvg{left:0;width:100%;opacity:.55}}
+.tk:nth-child(2) .art{box-shadow:inset 0 0 0 2px #f0123f}.fr.f3{box-shadow:0 0 0 1px #f0123f88,0 40px 100px #000,0 0 120px #f0123f55}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 <div class="stage">
@@ -194,7 +201,7 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 <div class="l"><span>Games</span><span>Media</span><span>Studio</span><span>News</span></div>
 <div class="r"><span>Sign in</span><span class="sk f" role="button" tabindex="0"><span>Join the list</span></span></div></nav></div>
 
-<div class="hero" id="hero"><canvas class="hs-hero" data-live="hs" data-opt='{"seed":5,"ui":false}'></canvas><canvas class="ff-hero" data-live="frenzy" data-opt='{"w": 1920, "h": 1040, "hud": false, "pal": {"sky1": "#000000", "sky2": "#5b2bd6", "sun": "#7cf7ff", "far": "#0d0820", "plat": "#05040a", "edge": "#7cf7ff", "edge2": "#ff6bd6", "p1": "#ff6bd6", "p2": "#7cf7ff", "spark": "#fff6d6"}}'></canvas><div class="hbeam"></div>
+<div class="hero" id="hero"><canvas class="hs-hero" data-live="hs" data-opt='{"seed":5,"ui":false}'></canvas><div class="ff-hero ffsvg" data-ffh="hero" data-pal="red"></div><div class="hbeam"></div>
 <div class="c s1 on"><div class="chips"><span class="chip">L—002</span><span class="chip">Fighting</span><span class="chip">Platform arena</span></div>
 <div class="ffl">FATAL<br>FRENZY</div><h1>[Headline for Fatal Frenzy]</h1>
 <div class="b"><span class="sk f" role="button" tabindex="0"><span>Watch trailer</span></span><span class="sk o" role="button" tabindex="0"><span>Wishlist</span></span></div></div>
@@ -206,7 +213,7 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 
 <div class="row"><div class="sh"><h2>Worlds</h2><div class="flt" role="group" aria-label="Platform"><button class="on" data-f="all">All</button><button data-f="pc">PC</button><button data-f="console">Console</button><button data-f="mobile">Mobile</button></div></div>
 <div class="tks"><a class="tk" href="games/scape/" aria-label="Scape project deck" data-p="pc console"><div class="art"><canvas data-scene="hs" data-opt='{"seed":9,"w":96,"h":112,"ui":false,"wallH":20,"hx":0.45,"hy":0.62,"foes":[[0.66,0.48,1],[0.2,0.75,0],[0.72,0.82,0]]}'></canvas></div>
-<div class="stub"><div class="no">L—001</div><h4>Scape</h4><div class="gn">JRPG · Hack and slash · Pixel art</div><div class="perf"></div><div class="bc"></div></div></a><a class="tk" href="games/fatal-frenzy/" aria-label="Fatal Frenzy project deck" data-p="pc console mobile"><div class="art"><canvas data-scene="frenzy" data-opt='{"w": 700, "h": 820, "hud": false, "seed": 4, "pal": {"sky1": "#000000", "sky2": "#5b2bd6", "sun": "#7cf7ff", "far": "#0d0820", "plat": "#05040a", "edge": "#7cf7ff", "edge2": "#ff6bd6", "p1": "#ff6bd6", "p2": "#7cf7ff", "spark": "#fff6d6"}}'></canvas></div>
+<div class="stub"><div class="no">L—001</div><h4>Scape</h4><div class="gn">JRPG · Hack and slash · Pixel art</div><div class="perf"></div><div class="bc"></div></div></a><a class="tk" href="games/fatal-frenzy/" aria-label="Fatal Frenzy project deck" data-p="pc console mobile"><div class="art"><div class="ffsvg" data-ffh="ticket" data-pal="red"></div></div>
 <div class="stub"><div class="no">L—002</div><h4>Fatal Frenzy</h4><div class="gn">Fighting · Platform arena</div><div class="perf"></div><div class="bc"></div></div></a><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":3,"w":420,"h":500}'></canvas></div>
 <div class="stub"><div class="no">L—003</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":8,"w":420,"h":500,"cols":["#00ff9c","#00e5ff","#ffcc00","#ff2fb4"]}'></canvas></div>
 <div class="stub"><div class="no">L—004</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div></div></div>
@@ -217,7 +224,7 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 
 <div class="row media"><div class="ml"><h2>Media</h2><p>[One line on Lucid's films, series and shorts.]</p><span class="sk o" role="button" tabindex="0"><span>See all</span></span></div>
 <div class="stack">
-<div class="fr f1"><img src="assets/img/p15.jpg"></div><div class="fr f2"><img src="assets/img/p07.jpg"></div><div class="fr f3"><canvas data-live="frenzy" data-opt='{"w": 1600, "h": 900, "hud": false, "seed": 21, "pal": {"sky1": "#000000", "sky2": "#5b2bd6", "sun": "#7cf7ff", "far": "#0d0820", "plat": "#05040a", "edge": "#7cf7ff", "edge2": "#ff6bd6", "p1": "#ff6bd6", "p2": "#7cf7ff", "spark": "#fff6d6"}}'></canvas><div class="play"></div></div><div class="fr f4"><img src="assets/img/p18.jpg"></div><div class="fr f5"><img src="assets/img/p17.jpg"></div>
+<div class="fr f1"><img src="assets/img/p15.jpg"></div><div class="fr f2"><img src="assets/img/p07.jpg"></div><div class="fr f3"><div class="ffsvg" data-ffh="finish" data-pal="red"></div><div class="play"></div></div><div class="fr f4"><img src="assets/img/p18.jpg"></div><div class="fr f5"><img src="assets/img/p17.jpg"></div>
 </div>
 <div class="mr"><div class="mi"><div class="no">M—001</div><div>[Film]<br>[Title]</div></div><div class="mi"><div class="no">M—002</div><div>[Series]<br>[Title]</div></div><div class="mi"><div class="no">M—003</div><div>[Short]<br>[Title]</div></div></div></div>
 
@@ -261,4 +268,5 @@ const flo=[...document.querySelectorAll('.flo')];if(!reduce)addEventListener('sc
 // sign-up (preview only)
 document.getElementById('join').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').hidden=false});
 })();
-</script></body></html>
+</script><script src="assets/ff/ff-art.js"></script><script src="assets/ff/ff-mob.js"></script><script src="assets/ff/ff-home.js"></script><script>document.fonts.ready.then(()=>document.querySelectorAll("[data-ffh]").forEach(e=>{const k=e.dataset.ffh,p=e.dataset.pal||"holo";e.innerHTML=k=="rule"?FFH.rule(p,+e.dataset.k):FFH[k](p)}))</script>
+</body></html>
