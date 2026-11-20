@@ -224,7 +224,7 @@ canvas.scp{object-fit:cover;image-rendering:pixelated}
 <div class="sig"><img src="assets/img/p20.jpg"><div class="tick"><div class="run"><span>L—001 SCAPE</span><b>■</b><span>L—002 FATAL FRENZY</span><b>■</b><span>L—003 [NEXT WORLD]</span><b>■</b><span>[FILM TITLE]</span><b>■</b><span>L—001 SCAPE</span><b>■</b><span>L—002 FATAL FRENZY</span></div></div></div>
 
 <div class="row"><div class="sh"><h2>Worlds</h2><div class="flt" role="group" aria-label="Platform"><button class="on" data-f="all">All</button><button data-f="pc">PC</button><button data-f="console">Console</button><button data-f="mobile">Mobile</button></div></div>
-<div class="tks"><a class="tk" href="games/scape/" aria-label="Scape project deck" data-p="pc console"><div class="art"><canvas class="scp" data-scp="paintVoid" style="object-position:50% 50%"></canvas></div>
+<div class="tks"><a class="tk" href="games/scape/" aria-label="Scape project deck" data-p="pc console"><div class="art"><canvas class="scp" data-scp="paintDeepwoods" data-v="shafts" style="object-position:50% 50%"></canvas></div>
 <div class="stub"><div class="no">L—001</div><h4>Scape</h4><div class="gn">JRPG · Hack and slash · Pixel art</div><div class="perf"></div><div class="bc"></div></div></a><a class="tk" href="games/fatal-frenzy/" aria-label="Fatal Frenzy project deck" data-p="pc console mobile"><div class="art"><div class="ffsvg" data-ffh="ticket" data-pal="red"></div></div>
 <div class="stub"><div class="no">L—002</div><h4>Fatal Frenzy</h4><div class="gn">Fighting · Platform arena</div><div class="perf"></div><div class="bc"></div></div></a><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":3,"w":420,"h":500}'></canvas></div>
 <div class="stub"><div class="no">L—003</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":8,"w":420,"h":500,"cols":["#00ff9c","#00e5ff","#ffcc00","#ff2fb4"]}'></canvas></div>
@@ -281,5 +281,5 @@ const flo=[...document.querySelectorAll('.flo')];if(!reduce)addEventListener('sc
 document.getElementById('join').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').hidden=false});
 })();
 </script><script src="assets/ff/ff-art.js"></script><script src="assets/ff/ff-mob.js"></script><script src="assets/ff/ff-home.js"></script><script>document.fonts.ready.then(()=>document.querySelectorAll("[data-ffh]").forEach(e=>{const k=e.dataset.ffh,p=e.dataset.pal||"holo";e.innerHTML=k=="rule"?FFH.rule(p,+e.dataset.k):FFH[k](p)}))</script>
-<script src="assets/scape/scape-art.js"></script><script>document.querySelectorAll("canvas[data-scp]").forEach(cv=>SCP[cv.dataset.scp](cv,{}))</script>
+<script src="assets/scape/scape-art.js"></script><script>document.querySelectorAll("canvas[data-scp]").forEach(cv=>SCP[cv.dataset.scp](cv,cv.dataset.v?{v:cv.dataset.v}:{}))</script>
 </body></html>
