@@ -153,6 +153,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .flt button.on{background:#fff;color:#000}
 .tk{transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s,filter .35s}
 .tk:hover{transform:translateY(-10px) rotate(-1deg)}
+a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 .tk:hover .art{box-shadow:0 0 60px #8f7bff66}
 .tk.dim{opacity:.22;filter:grayscale(1)}
 .stack .fr{transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s}
@@ -204,9 +205,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 <div class="sig"><img src="assets/img/p20.jpg"><div class="tick"><div class="run"><span>L—001 SCAPE</span><b>■</b><span>L—002 FATAL FRENZY</span><b>■</b><span>L—003 [NEXT WORLD]</span><b>■</b><span>[FILM TITLE]</span><b>■</b><span>L—001 SCAPE</span><b>■</b><span>L—002 FATAL FRENZY</span></div></div></div>
 
 <div class="row"><div class="sh"><h2>Worlds</h2><div class="flt" role="group" aria-label="Platform"><button class="on" data-f="all">All</button><button data-f="pc">PC</button><button data-f="console">Console</button><button data-f="mobile">Mobile</button></div></div>
-<div class="tks"><div class="tk" data-p="pc console"><div class="art"><canvas data-scene="hs" data-opt='{"seed":9,"w":96,"h":112,"ui":false,"wallH":20,"hx":0.45,"hy":0.62,"foes":[[0.66,0.48,1],[0.2,0.75,0],[0.72,0.82,0]]}'></canvas></div>
-<div class="stub"><div class="no">L—001</div><h4>Scape</h4><div class="gn">JRPG · Hack and slash · Pixel art</div><div class="perf"></div><div class="bc"></div></div></div><div class="tk" data-p="pc console mobile"><div class="art"><canvas data-scene="frenzy" data-opt='{"w": 700, "h": 820, "hud": false, "seed": 4, "pal": {"sky1": "#000000", "sky2": "#5b2bd6", "sun": "#7cf7ff", "far": "#0d0820", "plat": "#05040a", "edge": "#7cf7ff", "edge2": "#ff6bd6", "p1": "#ff6bd6", "p2": "#7cf7ff", "spark": "#fff6d6"}}'></canvas></div>
-<div class="stub"><div class="no">L—002</div><h4>Fatal Frenzy</h4><div class="gn">Fighting · Platform arena</div><div class="perf"></div><div class="bc"></div></div></div><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":3,"w":420,"h":500}'></canvas></div>
+<div class="tks"><a class="tk" href="games/scape/" aria-label="Scape project deck" data-p="pc console"><div class="art"><canvas data-scene="hs" data-opt='{"seed":9,"w":96,"h":112,"ui":false,"wallH":20,"hx":0.45,"hy":0.62,"foes":[[0.66,0.48,1],[0.2,0.75,0],[0.72,0.82,0]]}'></canvas></div>
+<div class="stub"><div class="no">L—001</div><h4>Scape</h4><div class="gn">JRPG · Hack and slash · Pixel art</div><div class="perf"></div><div class="bc"></div></div></a><a class="tk" href="games/fatal-frenzy/" aria-label="Fatal Frenzy project deck" data-p="pc console mobile"><div class="art"><canvas data-scene="frenzy" data-opt='{"w": 700, "h": 820, "hud": false, "seed": 4, "pal": {"sky1": "#000000", "sky2": "#5b2bd6", "sun": "#7cf7ff", "far": "#0d0820", "plat": "#05040a", "edge": "#7cf7ff", "edge2": "#ff6bd6", "p1": "#ff6bd6", "p2": "#7cf7ff", "spark": "#fff6d6"}}'></canvas></div>
+<div class="stub"><div class="no">L—002</div><h4>Fatal Frenzy</h4><div class="gn">Fighting · Platform arena</div><div class="perf"></div><div class="bc"></div></div></a><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":3,"w":420,"h":500}'></canvas></div>
 <div class="stub"><div class="no">L—003</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":8,"w":420,"h":500,"cols":["#00ff9c","#00e5ff","#ffcc00","#ff2fb4"]}'></canvas></div>
 <div class="stub"><div class="no">L—004</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div></div></div>
 
@@ -230,7 +231,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 <form class="row fin" id="join"><div class="lg beam x"><span>LUC</span><i></i><span>D</span></div><h3>[Sign-up headline]</h3><p>[What they get and how often.]</p>
 <div class="form"><label class="vh" for="email">Email address</label><input class="in" id="email" type="email" placeholder="Email address" required><button class="sk f" type="submit"><span>Join the list</span></button></div><p class="ok" id="ok" hidden>[Confirmation line]. This preview does not send anything.</p></form>
 
-<footer><div class="row"><div class="lg beam n"><span>LUC</span><i></i><span>D</span></div><div class="col" style="grid-column:7/9"><b>Games</b>Scape<br>Fatal Frenzy</div><div class="col"><b>Media</b>Films<br>Series<br>Shorts</div><div class="col"><b>Studio</b>About<br>News<br>Contact</div>
+<footer><div class="row"><div class="lg beam n"><span>LUC</span><i></i><span>D</span></div><div class="col" style="grid-column:7/9"><b>Games</b><a class="fl" href="games/scape/">Scape</a><br><a class="fl" href="games/fatal-frenzy/">Fatal Frenzy</a></div><div class="col"><b>Media</b>Films<br>Series<br>Shorts</div><div class="col"><b>Studio</b>About<br>News<br>Contact</div>
 <div class="base"><span>© Lucid</span><span>Privacy · Terms</span></div></div></footer>
 </div>
 <script src="assets/scenes.js"></script><script src="assets/v11b.js"></script>
