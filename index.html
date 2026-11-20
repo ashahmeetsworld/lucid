@@ -194,6 +194,18 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 .hero>.ffsvg{position:absolute;top:0;left:16%;width:88%;height:100%;transition:opacity .9s ease;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%),linear-gradient(0deg,transparent,#000 26%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 30%);}
 @media(max-width:640px){.hero>.ffsvg{left:0;width:100%;opacity:.55}}
 .tk:nth-child(2) .art{box-shadow:inset 0 0 0 2px #f0123f}.fr.f3{box-shadow:0 0 0 1px #f0123f88,0 40px 100px #000,0 0 120px #f0123f55}
+
+/* ---- Scape pixel worlds from the project deck ---- */
+canvas.scp{object-fit:cover;image-rendering:pixelated}
+.sp{position:absolute;overflow:hidden;box-shadow:0 0 0 1px #ffffff26,0 30px 80px #000c;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.sp:hover{transform:translateY(-8px);box-shadow:0 0 0 1px #ffffff44,0 0 60px #8f7bff66}
+.sp canvas{width:100%;height:100%;display:block}.sp .chip{position:absolute;left:14px;bottom:14px}
+.place .scene.scf{-webkit-mask-image:radial-gradient(ellipse 50% 54% at 56% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 50% 54% at 56% 50%,#000 45%,transparent 100%)}
+.place .scene.scb,.place .scene.scc{-webkit-mask-image:none;mask-image:none;grid-column:6/13}
+.scb .sp0{left:0;right:0;top:0;height:calc(58% - 12px)}.scb .sp1{left:0;width:calc(50% - 12px);bottom:0;height:calc(42% - 12px)}.scb .sp2{right:0;width:calc(50% - 12px);bottom:0;height:calc(42% - 12px)}
+.scc .dp0{left:0;top:0;width:62%;aspect-ratio:16/9;z-index:1}.scc .dp1{left:19%;top:31%;width:62%;aspect-ratio:16/9;z-index:2}.scc .dp2{right:0;bottom:0;width:62%;aspect-ratio:16/9;z-index:3}
+.scc .sp .chip{top:14px;bottom:auto}
+@media(max-width:1100px){.place .scene.scb,.place .scene.scc{margin-bottom:40px}.scc .dp0,.scc .dp1,.scc .dp2{width:72%}.scc .dp1{left:14%;top:33%}.place .scene.scb,.place .scene.scc{height:110vw}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 <div class="stage">
@@ -201,7 +213,7 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 <div class="l"><span>Games</span><span>Media</span><span>Studio</span><span>News</span></div>
 <div class="r"><span>Sign in</span><span class="sk f" role="button" tabindex="0"><span>Join the list</span></span></div></nav></div>
 
-<div class="hero" id="hero"><canvas class="hs-hero" data-live="hs" data-opt='{"seed":5,"ui":false}'></canvas><div class="ff-hero ffsvg" data-ffh="hero" data-pal="red"></div><div class="hbeam"></div>
+<div class="hero" id="hero"><canvas class="hs-hero scp" data-scp="paintMetro"></canvas><div class="ff-hero ffsvg" data-ffh="hero" data-pal="red"></div><div class="hbeam"></div>
 <div class="c s1 on"><div class="chips"><span class="chip">L—002</span><span class="chip">Fighting</span><span class="chip">Platform arena</span></div>
 <div class="ffl">FATAL<br>FRENZY</div><h1>[Headline for Fatal Frenzy]</h1>
 <div class="b"><span class="sk f" role="button" tabindex="0"><span>Watch trailer</span></span><span class="sk o" role="button" tabindex="0"><span>Wishlist</span></span></div></div>
@@ -212,13 +224,13 @@ a.tk,a.fl{color:inherit;text-decoration:none}a.fl:hover{color:#fff}
 <div class="sig"><img src="assets/img/p20.jpg"><div class="tick"><div class="run"><span>L—001 SCAPE</span><b>■</b><span>L—002 FATAL FRENZY</span><b>■</b><span>L—003 [NEXT WORLD]</span><b>■</b><span>[FILM TITLE]</span><b>■</b><span>L—001 SCAPE</span><b>■</b><span>L—002 FATAL FRENZY</span></div></div></div>
 
 <div class="row"><div class="sh"><h2>Worlds</h2><div class="flt" role="group" aria-label="Platform"><button class="on" data-f="all">All</button><button data-f="pc">PC</button><button data-f="console">Console</button><button data-f="mobile">Mobile</button></div></div>
-<div class="tks"><a class="tk" href="games/scape/" aria-label="Scape project deck" data-p="pc console"><div class="art"><canvas data-scene="hs" data-opt='{"seed":9,"w":96,"h":112,"ui":false,"wallH":20,"hx":0.45,"hy":0.62,"foes":[[0.66,0.48,1],[0.2,0.75,0],[0.72,0.82,0]]}'></canvas></div>
+<div class="tks"><a class="tk" href="games/scape/" aria-label="Scape project deck" data-p="pc console"><div class="art"><canvas class="scp" data-scp="paintSpirits" style="object-position:64% 50%"></canvas></div>
 <div class="stub"><div class="no">L—001</div><h4>Scape</h4><div class="gn">JRPG · Hack and slash · Pixel art</div><div class="perf"></div><div class="bc"></div></div></a><a class="tk" href="games/fatal-frenzy/" aria-label="Fatal Frenzy project deck" data-p="pc console mobile"><div class="art"><div class="ffsvg" data-ffh="ticket" data-pal="red"></div></div>
 <div class="stub"><div class="no">L—002</div><h4>Fatal Frenzy</h4><div class="gn">Fighting · Platform arena</div><div class="perf"></div><div class="bc"></div></div></a><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":3,"w":420,"h":500}'></canvas></div>
 <div class="stub"><div class="no">L—003</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div><div class="tk" data-p=""><div class="art"><canvas data-scene="sq" data-opt='{"seed":8,"w":420,"h":500,"cols":["#00ff9c","#00e5ff","#ffcc00","#ff2fb4"]}'></canvas></div>
 <div class="stub"><div class="no">L—004</div><h4>[Next world]</h4><div class="gn">[Genre]</div><div class="perf"></div><div class="bc"></div></div></div></div></div>
 
-<div class="row place"><div class="scene"><canvas data-live="hs" data-opt='{"seed":5}'></canvas></div>
+<div class="row place"><div class="scene scf"><canvas class="scp" data-scp="paintCastle"></canvas></div>
 <div class="tx"><div class="chips"><span class="chip">L—001</span><span class="chip">JRPG</span><span class="chip">Hack and slash</span></div><div class="scape">SCAPE</div><h3>[Headline for Scape]</h3><p>[One or two lines on the game: what you do, what it feels like.]</p>
 <div class="b"><span class="sk f" role="button" tabindex="0"><span>Watch trailer</span></span><span class="sk o" role="button" tabindex="0"><span>Wishlist</span></span></div></div></div>
 
@@ -269,4 +281,5 @@ const flo=[...document.querySelectorAll('.flo')];if(!reduce)addEventListener('sc
 document.getElementById('join').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').hidden=false});
 })();
 </script><script src="assets/ff/ff-art.js"></script><script src="assets/ff/ff-mob.js"></script><script src="assets/ff/ff-home.js"></script><script>document.fonts.ready.then(()=>document.querySelectorAll("[data-ffh]").forEach(e=>{const k=e.dataset.ffh,p=e.dataset.pal||"holo";e.innerHTML=k=="rule"?FFH.rule(p,+e.dataset.k):FFH[k](p)}))</script>
+<script src="assets/scape/scape-art.js"></script><script>document.querySelectorAll("canvas[data-scp]").forEach(cv=>SCP[cv.dataset.scp](cv,{}))</script>
 </body></html>
