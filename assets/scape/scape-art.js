@@ -557,4 +557,61 @@ function paintMetro(cv,o){o=o||{};const [c,W,H]=setup(cv,o);const R=PR(o.seed||7
  for(let k=0;k<110;k++){const rx=R()*W,ry=212+R()*(H-214);c.globalAlpha=.4;px(c,rx,ry,2+R()*6,1,NS[Math.floor(R()*NS.length)]);c.globalAlpha=1}
  c.setTransform(1,0,0,1,0,0);bloom(c,W,H);
 }
-return {paintCity,paintMetro,paintStation,paintCastle,paintGrove,paintMeadow,paintSky,paintInfest,paintSpirits,paintAbyss,paintVoid};})();
+// v1.7 Deep woods (portrait): the outlands where wonder meets the strange. Golden-green canopy and light shafts up top,
+// scavenging in the roots, and the infestation creeping in from the dark below: thorns, soot spirits, eyes, spores.
+// o.v: 'shafts' (light pours on a rusted machine) | 'shrine' (a mossy spirit gate, a masked watcher) | 'giant' (a fallen guardian makes an arch)
+function paintDeepwoods(cv,o){o=o||{};const [c,W,H]=setup(cv,o,200,284);const R=PR(o.seed||23);const v=o.v||'shafts';const E=[],L=[];
+ // sky through the canopy, golden haze to deep green
+ const sky=['#fff0a8','#f2e48a','#d8d472','#b0c25e','#84a84c','#558a42','#3e6e36','#2c552c','#1e3e22','#142c1a'];
+ for(let y=0;y<H;y++)px(c,0,y,W,1,sky[Math.min(sky.length-1,Math.floor(y/H*sky.length))]);
+ // far trunks in the haze
+ for(let k=0;k<9;k++){const x=R()*W,w=5+R()*8;px(c,x,0,w,H,k%2?'#8aa86a':'#7a9a62');px(c,x,0,1,H,'#a8c488')}
+ // mid trunks
+ for(let k=0;k<6;k++){const x=R()*W,w=9+R()*10;px(c,x,0,w,H,'#4a6a3e');px(c,x+w-2,0,2,H,'#3a5632');for(let q=0;q<10;q++)px(c,x+R()*w,R()*H,2+R()*3,3+R()*6,'#5e8a46')}
+ // light shafts
+ c.globalAlpha=v=='shafts'?.26:.16;for(let k=0;k<5;k++){const x0=30+k*34+R()*10;for(let y=0;y<H;y+=1){const x=x0+y*.28;px(c,x,y,6+k%3*3,1,'#fff6c0')}}c.globalAlpha=1;
+ // canopy: leafy clumps with gold highlights
+ for(let k=0;k<70;k++){const x=R()*W,y=R()*46-6,r=4+R()*9;disc2(c,x,y+2,r,'#2e5a2a');disc2(c,x,y,r,['#4a8a3a','#5aa044','#3e7a34'][k%3]);disc2(c,x-r*.3,y-r*.3,Math.max(1,r*.45),['#a8d460','#d8e870'][k%2])}
+ // hanging vines
+ for(let k=0;k<16;k++){const x=R()*W,len=20+R()*70;for(let q=0;q<len;q++)px(c,x+Math.sin(q*.25+k)*1.5,30+q,1,1,q%5?'#3e7a34':'#8ac860')}
+ // near trunks framing the scene
+ for(const [x,w,fl] of [[-8,30,0],[W-24,32,1]]){px(c,x,0,w,H,'#2a3a24');px(c,fl?x:x+w-4,0,4,H,'#1a2618');px(c,fl?x+w-6:x+2,0,3,H,'#3e5634');
+  for(let q=0;q<26;q++)px(c,x+R()*w,R()*H,3+R()*5,2+R()*4,['#4a8a3a','#6ab04a','#3a6a2e'][q%3]);
+  for(let q=0;q<4;q++){const ry=H-60+q*10;for(let t=0;t<30;t++)px(c,(fl?x-t:x+w+t),ry+t*.4+Math.sin(t*.3)*2,3,2,'#2a3a24')}}
+ // forest floor: ferns, moss, golden flecks, darker toward the bottom
+ for(let y=200;y<H;y++){c.globalAlpha=.5;px(c,0,y,W,1,y<240?'#2e5a2a':'#1a3420');c.globalAlpha=1}
+ for(let k=0;k<160;k++){const x=R()*W,y=196+R()*(H-196),l=3+R()*6;for(let q=0;q<l;q++)px(c,x+(q-l/2)*.5,y-q,1,1,['#5aa044','#7ac050','#3e7a34','#9ad060'][k%4])}
+ for(let k=0;k<26;k++){const x=R()*W,y=200+R()*80;for(let q=-4;q<=4;q++)px(c,x+q,y-Math.abs(q)*.6,1,2,q%2?'#4a9a3a':'#6ac050')}
+ for(let k=0;k<50;k++)px(c,R()*W,190+R()*90,1,1,['#ffe07a','#fff6c0'][k%2]);
+ // ---- the thing in the middle
+ if(v=='shafts'){// rusted machine half swallowed by roots, the party picking it over
+  ell2(c,100,214,40,9,'#1e3020');px(c,74,178,52,34,'#8a5a3a');px(c,74,178,52,3,'#b07a4a');px(c,80,184,14,10,'#2a3a3a');px(c,82,186,10,6,'#7fd8d0');px(c,104,184,16,6,'#5a3a2a');
+  for(let q=0;q<12;q++)px(c,76+R()*48,182+R()*28,2+R()*5,2+R()*4,['#a06a3a','#6a4a2a','#4a8a3a'][q%3]);px(c,124,168,4,14,'#6a4a2a');disc2(c,126,166,4,'#8a5a3a');
+  for(let k=0;k<5;k++){const pts=[];let x=70+k*14,y=210,a=-1.4-R()*.4;for(let s=0;s<40;s++){a+=(R()-.5)*.3;x+=Math.cos(a)*1;y+=Math.sin(a)*1;pts.push([x,y])}strand(c,pts,1.5,['#1e2a18','#4a6a34'])}
+  px(c,140,200,10,8,'#7a5a3a');px(c,141,201,8,2,'#a07a4a');party(c,150,206)}
+ if(v=='shrine'){// a mossy spirit gate with paper lanterns, a masked watcher in the trees
+  px(c,62,140,6,74,'#a8382e');px(c,132,140,6,74,'#a8382e');px(c,52,132,96,6,'#b8402e');px(c,48,128,104,4,'#2a1a18');px(c,58,146,84,4,'#a8382e');
+  for(let q=0;q<40;q++)px(c,50+R()*100,126+R()*10,2+R()*4,2,['#4a8a3a','#6ab04a'][q%2]);for(let q=0;q<20;q++)px(c,60+(q%2)*72+R()*8,140+R()*70,2,2+R()*4,'#4a8a3a');
+  for(const lx of [56,144]){px(c,lx,152,1,8,'#2a1a18');E.push(()=>{ell2(c,lx,164,3,5,'#e8484a');px(c,lx-1,162,3,4,'#ffb070')});L.push({x:lx,y:164,r:30,c:'#ffb347',i:1})}
+  px(c,96,196,8,14,'#7a7a6a');px(c,94,194,12,3,'#8a8a7a');E.push(()=>px(c,99,190,2,4,'#ffe07a'));L.push({x:100,y:190,r:22,c:'#ffd27a',i:.9});
+  // masked watcher half hidden by the left trunk
+  px(c,18,96,10,30,'#0c0c14');px(c,19,98,8,8,'#f4ecd8');px(c,20,100,2,2,'#3a2a3a');px(c,24,100,2,2,'#3a2a3a');px(c,21,104,4,1,'#3ad8b0');px(c,18,94,1,4,'#f4ecd8');px(c,27,94,1,4,'#f4ecd8');
+  party(c,100,226)}
+ if(v=='giant'){// a fallen guardian, overgrown, making an arch the party walks under
+  for(let a=Math.PI;a<=Math.PI*2;a+=.01){const x=100+Math.cos(a)*70,y=214+Math.sin(a)*86;disc2(c,x,y,9,'#6a5a4a');disc2(c,x,y-2,7,'#8a7a62')}
+  disc2(c,40,150,16,'#7a6a56');disc2(c,40,148,13,'#9a8a70');disc2(c,46,146,4,'#1a1a1a');E.push(()=>disc2(c,46,146,2,'#ffb347'));L.push({x:46,y:146,r:26,c:'#ffb347',i:.8});
+  for(let q=0;q<120;q++){const a=Math.PI+R()*Math.PI,x=100+Math.cos(a)*70,y=214+Math.sin(a)*86;px(c,x-4+R()*8,y-8+R()*6,2+R()*4,2+R()*3,['#4a8a3a','#6ab04a','#8ac860'][q%3])}
+  for(let k=0;k<4;k++)px(c,90+k*7,124,2,2,['#ffd24a','#ff9ad0','#ffffff','#ffd24a'][k]);
+  party(c,100,214)}
+ // ---- the infestation, creeping in from the dark below
+ for(let k=0;k<7;k++){const pts=[];let x=k<4?R()*40:W-R()*40,y=H+2,a=-Math.PI/2+(k<4?.5:-.5)*R();for(let s=0;s<70+R()*50;s++){a+=(R()-.5)*.35;x+=Math.cos(a)*1.2;y+=Math.sin(a)*1.2;pts.push([x,y])}
+  strand(c,pts,2,['#1a0a24','#7a3a9a']);pts.forEach(([x2,y2],i)=>{if(i%9==0)px(c,x2+2,y2-2,1,2,'#e0b0ff')})}
+ for(let k=0;k<22;k++){const x=R()<.5?8+R()*40:W-48+R()*40,y=236+R()*44;disc2(c,x,y,2,'#0a0a10');px(c,x-1,y-1,1,1,'#fff');px(c,x+1,y-1,1,1,'#fff')}
+ for(const [x,y] of [[30,252],[170,244],[150,268]]){E.push(()=>{px(c,x,y,2,1,'#e8ff7a');px(c,x+5,y,2,1,'#e8ff7a')});L.push({x:x+3,y,r:12,c:'#c8ff3d',i:.6})}
+ // glowing mushrooms
+ for(let k=0;k<6;k++){const x=20+R()*160,y=244+R()*30;px(c,x,y,1,4,'#e8e0c8');E.push(()=>ell2(c,x,y,3,2,['#7dffd0','#ff9ad0'][k%2]));L.push({x,y,r:16,c:['#7dffd0','#ff9ad0'][k%2],i:.7})}
+ lightPass(c,W,H,[1.05,1.0,.82],L);E.forEach(f=>f());
+ // spores drifting up through the light
+ for(let k=0;k<40;k++){const x=R()*W,y=60+R()*200;px(c,x,y,1,1,k%3?'#d8fff0':'#ffe8a0')}
+}
+return {paintDeepwoods,paintDungeon,paintWild,paintCity,paintMetro,paintStation,paintCastle,paintGrove,paintMeadow,paintSky,paintInfest,paintSpirits,paintAbyss,paintVoid};})();
